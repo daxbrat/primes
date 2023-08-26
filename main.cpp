@@ -3,17 +3,26 @@
 int main()
 {
 	
-	for (int i = 1; i <= 100; i++) {
-		for (int j = 1; j <= i; j++) {
-			if (i == 1) {
-				continue;
-			}
-			if (j % i == 0) {
-				break;
-			}
-			
-			}
-		}
+    cout << "Prime numbers between 1 and 100 are:\n";
 
-	}
+    for (int number = 2; number <= 100; ++number) {
+        bool isPrime = true;
+
+        for (int i = 2; i * i <= number; ++i) {
+            if (number % i == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            cout << number << " ";
+        }
+    }
+
+    return 0;
 }
+
+
+
+
